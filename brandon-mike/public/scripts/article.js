@@ -72,7 +72,12 @@
   Article.allAuthors = () => {
     return Article.all.map(ele => {
       return ele.author
-    }).reduce()
+    }).reduce((arrayOfUniqueNames, currentName) => {
+      if (arrayOfUniqueNames.includes(currentName)) {
+        arrayOfUniqueNames.push(currentName);
+      }
+      return arrayOfUniqueNames;
+    }, []);
   };
 
   Article.numWordsByAuthor = () => {
