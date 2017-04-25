@@ -45,9 +45,7 @@
     Article.all.push(new Article(ele));
   });
   */
-    Article.all = rows.map(ele => {
-      return new Article(ele);
-    })
+    Article.all = rows.map(ele => new Article(ele))
   };
 
   Article.fetchAll = callback => {
